@@ -9,9 +9,10 @@
 **Descripción:** Crea un usuario con créditos según el plan seleccionado.  
 
 **Paquetes disponibles:**  
-- Plan 1: 30 envíos ($135)  
-- Plan 2: 40 envíos ($160)  
-- Plan 3: 60 envíos ($180)  
+- Paquete 1: 30 envíos ($135)  
+- Paquete 2: 40 envíos ($160)  
+- Paquete 3: 60 envíos ($180)
+(NOTA: para hacer la compra del paquete colocar "30_envios, 40_envios 60_envios respectivamente);
 
 **Ejemplo de cuerpo (JSON):**  
 ```json
