@@ -12,7 +12,7 @@
 - Paquete 1: 30 envíos ($135)  
 - Paquete 2: 40 envíos ($160)  
 - Paquete 3: 60 envíos ($180)
-(NOTA: para hacer la compra del paquete colocar "30_envios, 40_envios 60_envios respectivamente);
+(NOTA: para hacer la compra del paquete colocar "30_envios, 40_envios o 60_envios dependiendo de que paquete quisiera el usuario adquirir);
 
 **Ejemplo de cuerpo (JSON):**  
 ```json
