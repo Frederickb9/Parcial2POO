@@ -110,9 +110,12 @@
 # ⚙️ Configuración
 **Pasos para probar la API**
 **1. Clona el repositorio:** git clone https://github.com/Frederickb9/Parcial2POO.git
+
 **2. Instala dependencias:** npm install express mongoose dotenv
+
 **3. Crea un archivo .env y configura las variables de entorno:** MONGODB_URI=tu_cadena_de_conexion
 PORT=3000
+
 **4. Ejecuta el servidor:** node app.js
 
 # 🛠️ Tecnologías Utilizadas
