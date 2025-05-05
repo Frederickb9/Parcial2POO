@@ -17,7 +17,7 @@
 **Ejemplo de cuerpo (JSON):**  
 ```json
 {
-  "nombre": "Rodolfo",
+  "nombre": "William",
   "paquete": "30_envios"
 }
 ```
