@@ -1,113 +1,93 @@
-Proyecto POSTMAIL - API para Gestión de Envíos
-Este proyecto consiste en una API para la gestión de envíos de la empresa POSTMAIL, que permite a los usuarios registrar sus envíos, verificar créditos disponibles y gestionar productos a enviar. Utiliza MongoDB como base de datos y Express.js para crear el servidor y manejar las rutas.
+Título del Proyecto
+Nombre autoexplicativo del proyecto, con una breve descripción.
 
-Endpoints de la API
-1. Crear un usuario con créditos según el plan
-Método: POST
-Ruta: /crear-usuario
-Descripción: Crea un nuevo usuario asignándole créditos según el plan que elija.
-Planes disponibles:
-Plan 1: 30 envíos por $135
-Plan 2: 40 envíos por $160
-Plan 3: 60 envíos por $180
-Ejemplo de cuerpo (JSON):
+Descripción
+Una descripción más detallada y técnica del proyecto, incluyendo sus principales características, su propósito y cómo funciona.
 
-{
-  "nombre": "Juan Pérez",
-  "plan": 1
-}
-Respuesta esperada:
+Insignias
+Insignias que muestran metadatos como el estado de la compilación, la cobertura de las pruebas, el estado de las dependencias, etc.
 
-{
-  "mensaje": "Usuario creado correctamente",
-  "usuario": {
-    "nombre": "Juan Pérez",
-    "creditos": 30,
-    "costoPorEnvio": 4.5
-  }
-}
-2. Ver créditos de un usuario
-Método: GET
-Ruta: /credito/:id
-Descripción: Verifica los créditos disponibles del usuario.
-Respuesta esperada:
+Visuales
+Capturas de pantalla, videos o GIFs que demuestran lo que hace el proyecto y cómo usarlo.
 
-{
-  "nombre": "Juan Pérez",
-  "creditosDisponibles": 30,
-  "costoPorEnvio": 4.5
-}
-3. Registrar un nuevo envío
-Método: POST
-Ruta: /envio/:id
-Descripción: Registra un nuevo envío para un usuario, asignando el producto y los detalles del envío.
-Ejemplo de cuerpo (JSON):
+Empezando 🚀
+Estas instrucciones te guiarán para obtener una copia de este proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
 
-{
-  "nombre": "Juan Pérez",
-  "direccion": "Calle Falsa 123",
-  "telefono": "123456789",
-  "referencia": "Ref123",
-  "observacion": "Entregar de lunes a viernes",
-  "descripcion": "Paquete con documentos",
-  "peso": 2,
-  "bultos": 1,
-  "fecha_entrega": "2025-05-10T10:00:00Z"
-}
-Respuesta esperada:
+Prerrequisitos 📋
+Lista de software y herramientas, incluyendo versiones, que necesitas para instalar y ejecutar este proyecto:
 
-{
-  "mensaje": "Envío registrado correctamente"
-}
-4. Consultar todos los envíos de un usuario
-Método: GET
-Ruta: /envios/:id
-Descripción: Consulta todos los envíos registrados de un usuario.
-Respuesta esperada:
+Sistema Operativo (por ejemplo, Ubuntu 20.04, Windows 10)
+Lenguaje de programación (por ejemplo, Python 3.8)
+Framework (por ejemplo, Django 3.1)
+Base de datos (por ejemplo, PostgreSQL 12)
+Otros...
+Instalación 🔧
+Una guía paso a paso sobre cómo configurar el entorno de desarrollo e instalar todas las dependencias.
 
-{
-  "envios": [
-    {
-      "nombre": "Juan Pérez",
-      "direccion": "Calle Falsa 123",
-      "telefono": "123456789",
-      "referencia": "Ref123",
-      "observacion": "Entregar de lunes a viernes",
-      "producto": {
-        "descripcion": "Paquete con documentos",
-        "peso": 2,
-        "bultos": 1,
-        "fecha_entrega": "2025-05-10T10:00:00Z"
-      },
-      "costo": 4.5,
-      "fecha_envio": "2025-05-01T10:00:00Z"
-    }
-  ]
-}
-5. Eliminar un envío y devolver créditos
-Método: DELETE
-Ruta: /envio/:userId/:envioId
-Descripción: Elimina un envío registrado y devuelve los créditos al usuario.
-Respuesta esperada:
+# paso 1
+Y así sucesivamente...
 
-{
-  "mensaje": "Envío eliminado y créditos devueltos"
-}
-¿Cómo ejecutar el proyecto?
-Clona este repositorio:
-git clone https://github.com/Leo7107/POO-parcial.git
-Instala las dependencias:
-npm install
-Configura las variables de entorno: Crea un archivo .env en la raíz del proyecto y agrega tus credenciales de MongoDB y otras configuraciones necesarias.
+# paso 2
+Ejecutando las Pruebas ⚙️
+Instrucciones y ejemplos para ejecutar el conjunto de pruebas.
 
-Ejecuta el servidor:
+# proporciona un ejemplo
+Pruebas de Principio a Fin 🔩
+Explica qué cubren estas pruebas, por qué son importantes y cómo interpretar sus resultados.
 
-npm start
-Prueba la API: Puedes usar herramientas como Postman o Insomnia para hacer pruebas con los endpoints descritos arriba.
-Tecnologías utilizadas
-Node.js
-Express.js
-MongoDB
-Mongoose
-Autor
-Eduardo Leopoldo Hernández López
+Pruebas de Estilo de Código ⌨️
+Descripción y ejemplos de las pruebas de estilo que estás utilizando.
+
+# proporciona un ejemplo
+Despliegue 📦
+Instrucciones sobre cómo desplegar esto en un sistema en vivo o ambiente de producción.
+
+Construido Con 🛠️
+Explica qué tecnologías usaste para construir este proyecto. Aquí algunos ejemplos:
+
+Ruby - El lenguaje utilizado
+Ruby on Rails - El framework web utilizado
+Ruby gems - Gestión de dependencias
+Postgresql - Sistema de base de datos
+Bulma IO - Framework de CSS
+Contribuyendo 🖇️
+Las contribuciones son lo que hacen a la comunidad de código abierto un lugar increíble para aprender, inspirar y crear. Cualquier contribución que hagas es muy apreciada. Por favor, lee el CONTRIBUTING.md para detalles sobre nuestro código de conducta, y el proceso para enviarnos pull requests.
+
+Wiki 📖
+Puedes encontrar mucho más sobre cómo usar este proyecto en nuestra Wiki
+
+Soporte
+Si tienes algún problema o sugerencia, por favor abre un problema aquí.
+
+Roadmap
+Ideas, mejoras planificadas y actualizaciones futuras
+
+para el proyecto actual.
+
+Versionado 📌
+Usamos Git para el versionado. Para las versiones disponibles, ve las etiquetas en este repositorio.
+
+Autores ✒️
+Brayan Diaz C - Trabajo inicial - Brayan Diaz C
+Mira también la lista de contribuidores que han participado en este proyecto.
+
+Licencia 📄
+Este proyecto está bajo la Licencia XYZ - ve el archivo LICENSE.md para detalles
+
+Expresiones de Gratitud 🎁
+Estamos agradecidos por las contribuciones de la comunidad a este proyecto. Si encontraste cualquier valor en este proyecto o quieres contribuir, aquí está lo que puedes hacer:
+
+Comparte este proyecto con otros
+Invítanos un café ☕
+Inicia un nuevo problema o contribuye con un PR
+Muestra tu agradecimiento diciendo gracias en un nuevo problema.
+Consejos Adicionales 📝
+Aquí hay algunos consejos extra para aprovechar al máximo tu README:
+
+Mantén cada sección lo más concisa posible. Evita la pelusa innecesaria, ya que puede ser abrumadora para el lector.
+Asegúrate de que tus instrucciones de instalación, pruebas y despliegue sean detalladas y precisas. Si hay pasos adicionales que el lector necesita tomar (como instalar dependencias extra), asegúrate de incluirlos.
+Los visuales (imágenes, GIFs) son muy útiles para transmitir rápidamente lo que hace tu proyecto y cómo usarlo. Si puedes, incluye capturas de pantalla de tu aplicación en acción o GIFs que demuestren su uso.
+El tono amigable y acogedor que usas en tu README es excelente. Ayuda a hacer tu proyecto más acogedor para los colaboradores.
+Recuerda, un buen README es crucial para hacer que tu proyecto sea atractivo y accesible para otros desarrolladores. ¡Buena suerte con tu proyecto!
+
+⌨️ con ❤️ por Brayan Diaz C 😊
