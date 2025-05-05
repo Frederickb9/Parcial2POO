@@ -1,93 +1,127 @@
-Título del Proyecto
-Nombre autoexplicativo del proyecto, con una breve descripción.
+# 📦 POSTMAIL - API de Gestión de Envíos  
+**Repositorio del Parcial 2**  
 
-Descripción
-Una descripción más detallada y técnica del proyecto, incluyendo sus principales características, su propósito y cómo funciona.
+## 📌 Endpoints  
 
-Insignias
-Insignias que muestran metadatos como el estado de la compilación, la cobertura de las pruebas, el estado de las dependencias, etc.
+### 🔹 Crear Usuario con Créditos  
+**Método:** POST  
+**Ruta:** `/usuario/comprar`  
+**Descripción:** Crea un usuario con créditos según el plan seleccionado.  
 
-Visuales
-Capturas de pantalla, videos o GIFs que demuestran lo que hace el proyecto y cómo usarlo.
+**Paquetes disponibles:**  
+- Plan 1: 30 envíos ($135)  
+- Plan 2: 40 envíos ($160)  
+- Plan 3: 60 envíos ($180)  
 
-Empezando 🚀
-Estas instrucciones te guiarán para obtener una copia de este proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
+**Ejemplo de cuerpo (JSON):**  
+```json
+{
+  "nombre": "Rodolfo",
+  "paquete": "30_envios"
+}
+```
+**Respuesta esperada:**
+```json
+{
+  "mensaje": "Paquete 30_envios comprado exitosamente"
+}
+```
+### 🔹 Registrar Envío
+**Método:** POST  
+**Ruta:** `/envio/registrar`  
+**Descripción:** Crea un usuario con créditos según el paquete seleccionado.  
 
-Prerrequisitos 📋
-Lista de software y herramientas, incluyendo versiones, que necesitas para instalar y ejecutar este proyecto:
+**Ejemplo de cuerpo (JSON):**
+```json
+{
+  "nombre": "William",
+  "envio": {
+    "destinatario": "Carlos",
+    "telefono": "7777-8888",
+    "direccion": "Calle El Progreso #123",
+    "referencia": "Frente a la iglesia",
+    "observacion": "Entregar antes de las 5 PM"
+  },
+  "producto": {
+    "descripcion": "Caja de libros",
+    "peso": 9,
+    "bultos": 1,
+    "fecha_entrega": "2025-05-10"
+  }
+}
+```
+**Respuesta esperada:**
+```json
+{
+  "mensaje": "Envio registrado con exito"
+}
+```
+### 🔹 Consultar Envíos/Usuario
+**Método:** GET  
+**Ruta:** `/envios/:nombre`  
+**Descripción:** Muestra la informacion del usuario, los creditos actuales, los envios realizados y la informacion de cada envio con su monto de creditos cobrados.
 
-Sistema Operativo (por ejemplo, Ubuntu 20.04, Windows 10)
-Lenguaje de programación (por ejemplo, Python 3.8)
-Framework (por ejemplo, Django 3.1)
-Base de datos (por ejemplo, PostgreSQL 12)
-Otros...
-Instalación 🔧
-Una guía paso a paso sobre cómo configurar el entorno de desarrollo e instalar todas las dependencias.
+**Ejemplo de peticion:**
+`http://localhost:3000/envios/William`
 
-# paso 1
-Y así sucesivamente...
+**Respuesta esperada:**
+```json
+{
+  "_id": "68190dc343be6ea82d94bd92",
+  "nombre": "William",
+  "__v": 0,
+  "creditos": 27,
+  "envios": [
+    {
+      "producto": {
+        "descripcion": "Caja de libros",
+        "peso": 9,
+        "bultos": 1,
+        "fecha_entrega": "2025-05-10"
+      },
+      "destinatario": "Carlos",
+      "telefono": "Calle el Progreso",
+      "direccion": "77778888",
+      "referencia": "Frente a la iglesia",
+      "observacion": "Entregar antes de las 5 PM",
+      "creditos_usados": 3,
+      "_id": "68190e0874698406cabcb5b4"
+    }
+  ]
+}
+```
+### 🔹 Eliminar Envío
+**Método:** DELETE  
+**Ruta:** `/envio/:nombre/:id`  
+**Descripción:** Este metodo elimina un envio realizado basandose en el id de este, asimismo reembolsa los creditos gastados en ese envio.
 
-# paso 2
-Ejecutando las Pruebas ⚙️
-Instrucciones y ejemplos para ejecutar el conjunto de pruebas.
+**Ejemplo de peticion:**
+`http://localhost:3000/envio/William/ID_del_envio`
 
-# proporciona un ejemplo
-Pruebas de Principio a Fin 🔩
-Explica qué cubren estas pruebas, por qué son importantes y cómo interpretar sus resultados.
+**Respuesta esperada:**
+```json
+{
+  "mensaje": "Envío eliminado y créditos devueltos"
+  "status": "success"
+}
+```
 
-Pruebas de Estilo de Código ⌨️
-Descripción y ejemplos de las pruebas de estilo que estás utilizando.
+# ⚙️ Configuración
+**Pasos para probar la API**
+**1. Clona el repositorio:** git clone https://github.com/Frederickb9/Parcial2POO.git
+**2. Instala dependencias:** npm install express mongoose dotenv
+**3. Crea un archivo .env y configura las variables de entorno:** MONGODB_URI=tu_cadena_de_conexion
+PORT=3000
+**4. Ejecuta el servidor:** node app.js
 
-# proporciona un ejemplo
-Despliegue 📦
-Instrucciones sobre cómo desplegar esto en un sistema en vivo o ambiente de producción.
+# 🛠️ Tecnologías Utilizadas
+**Node.js**
 
-Construido Con 🛠️
-Explica qué tecnologías usaste para construir este proyecto. Aquí algunos ejemplos:
+**Express.js**
 
-Ruby - El lenguaje utilizado
-Ruby on Rails - El framework web utilizado
-Ruby gems - Gestión de dependencias
-Postgresql - Sistema de base de datos
-Bulma IO - Framework de CSS
-Contribuyendo 🖇️
-Las contribuciones son lo que hacen a la comunidad de código abierto un lugar increíble para aprender, inspirar y crear. Cualquier contribución que hagas es muy apreciada. Por favor, lee el CONTRIBUTING.md para detalles sobre nuestro código de conducta, y el proceso para enviarnos pull requests.
+**MongoDB**
 
-Wiki 📖
-Puedes encontrar mucho más sobre cómo usar este proyecto en nuestra Wiki
+**Mongoose**
 
-Soporte
-Si tienes algún problema o sugerencia, por favor abre un problema aquí.
-
-Roadmap
-Ideas, mejoras planificadas y actualizaciones futuras
-
-para el proyecto actual.
-
-Versionado 📌
-Usamos Git para el versionado. Para las versiones disponibles, ve las etiquetas en este repositorio.
-
-Autores ✒️
-Brayan Diaz C - Trabajo inicial - Brayan Diaz C
-Mira también la lista de contribuidores que han participado en este proyecto.
-
-Licencia 📄
-Este proyecto está bajo la Licencia XYZ - ve el archivo LICENSE.md para detalles
-
-Expresiones de Gratitud 🎁
-Estamos agradecidos por las contribuciones de la comunidad a este proyecto. Si encontraste cualquier valor en este proyecto o quieres contribuir, aquí está lo que puedes hacer:
-
-Comparte este proyecto con otros
-Invítanos un café ☕
-Inicia un nuevo problema o contribuye con un PR
-Muestra tu agradecimiento diciendo gracias en un nuevo problema.
-Consejos Adicionales 📝
-Aquí hay algunos consejos extra para aprovechar al máximo tu README:
-
-Mantén cada sección lo más concisa posible. Evita la pelusa innecesaria, ya que puede ser abrumadora para el lector.
-Asegúrate de que tus instrucciones de instalación, pruebas y despliegue sean detalladas y precisas. Si hay pasos adicionales que el lector necesita tomar (como instalar dependencias extra), asegúrate de incluirlos.
-Los visuales (imágenes, GIFs) son muy útiles para transmitir rápidamente lo que hace tu proyecto y cómo usarlo. Si puedes, incluye capturas de pantalla de tu aplicación en acción o GIFs que demuestren su uso.
-El tono amigable y acogedor que usas en tu README es excelente. Ayuda a hacer tu proyecto más acogedor para los colaboradores.
-Recuerda, un buen README es crucial para hacer que tu proyecto sea atractivo y accesible para otros desarrolladores. ¡Buena suerte con tu proyecto!
-
-⌨️ con ❤️ por Brayan Diaz C 😊
+# ✒️ Autor
+**Frederick Adrian Benavidez Flores**
