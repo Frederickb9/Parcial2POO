@@ -94,9 +94,9 @@ http://localhost:3000/envio/William/ID del envio realizado
 
 Respuesta esperada:
 {
-  "mensaje": "Envio eliminado y creditos reembolsados",
-  "status": "success"
+  "mensaje": "Envío eliminado y créditos devueltos"
 }
+
 
 # ¿Cómo ejecutar el proyecto?
 
