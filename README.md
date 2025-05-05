@@ -30,7 +30,7 @@
 ### 🔹 Registrar Envío
 **Método:** POST  
 **Ruta:** `/envio/registrar`  
-**Descripción:** Este metodo registra un envio que se guarda en la base de datos como un subdocumentom, haciendo el cobro de los creditos dependiendo el producto a enviar.  
+**Descripción:** Este método registra un envío que se guarda en la base de datos como un subdocumento, haciendo el cobro de los créditos dependiendo el producto a enviar.  
 
 **Ejemplo de cuerpo (JSON):**
 ```json
@@ -60,9 +60,9 @@
 ### 🔹 Consultar Envíos/Usuario
 **Método:** GET  
 **Ruta:** `/envios/:nombre`  
-**Descripción:** Muestra la informacion del usuario, los creditos actuales, los envios realizados y la informacion de cada envio con su monto de creditos cobrados.
+**Descripción:** Muestra la información del usuario, los créditos actuales, los envíos realizados y la información de cada envío con su monto de créditos cobrados.
 
-**Ejemplo de peticion:**
+**Ejemplo de petición:**
 `http://localhost:3000/envios/William`
 
 **Respuesta esperada:**
@@ -94,9 +94,9 @@
 ### 🔹 Eliminar Envío
 **Método:** DELETE  
 **Ruta:** `/envio/:nombre/:id`  
-**Descripción:** Este metodo elimina un envio realizado basandose en el id de este, asimismo reembolsa los creditos gastados en ese envio.
+**Descripción:** Este método elimina un envio realizado basándose en el id de este, asimismo reembolsa los creditos gastados en ese envío.
 
-**Ejemplo de peticion:**
+**Ejemplo de petición:**
 `http://localhost:3000/envio/William/ID_del_envio`
 
 **Respuesta esperada:**
