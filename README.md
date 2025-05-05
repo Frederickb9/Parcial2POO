@@ -30,7 +30,7 @@
 ### 🔹 Registrar Envío
 **Método:** POST  
 **Ruta:** `/envio/registrar`  
-**Descripción:** Crea un usuario con créditos según el paquete seleccionado.  
+**Descripción:** Este metodo registra un envio que se guarda en la base de datos como un subdocumentom, haciendo el cobro de los creditos dependiendo el producto a enviar.  
 
 **Ejemplo de cuerpo (JSON):**
 ```json
