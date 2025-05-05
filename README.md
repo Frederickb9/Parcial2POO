@@ -109,6 +109,7 @@
 
 # ⚙️ Configuración
 **Pasos para probar la API**
+
 **1. Clona el repositorio:** git clone https://github.com/Frederickb9/Parcial2POO.git
 
 **2. Instala dependencias:** npm install express mongoose dotenv
